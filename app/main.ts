@@ -13,6 +13,10 @@ const server = net.createServer((socket) => {
     socket.write(response);
     socket.end();
   });
+
+  socket.on("error", (err) => {
+    console.log("Socket error: ", err);
+  });
 });
 
 server.listen(4221, () => {
