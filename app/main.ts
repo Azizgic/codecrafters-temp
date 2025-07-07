@@ -5,14 +5,10 @@ console.log("Logs from your program will appear here!");
 
 // Uncomment this to pass the first stage
 const server = net.createServer((socket) => {
-  socket.on("data", (data) => {
-    console.log("Recieved request: \n", data.toString());
-
-    const CRLF = "\r\n";
-    let response = "HTTP/1.1 200 OK" + CRLF + CRLF;
-    socket.write(response);
-    socket.end();
-  });
+  const CRLF = "\r\n";
+  let response = "HTTP/1.1 200 OK" + CRLF + CRLF;
+  socket.write(response);
+  socket.end();
 
   socket.on("error", (err) => {
     console.log("Socket error: ", err);
