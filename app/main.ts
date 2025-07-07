@@ -11,9 +11,6 @@ const server = net.createServer((socket) => {
     const CRLF = "\r\n";
     let response = "HTTP/1.1 200 OK" + CRLF + CRLF;
     socket.write(response);
-  });
-
-  socket.on("close", () => {
     socket.end();
   });
 });
