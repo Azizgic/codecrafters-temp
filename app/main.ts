@@ -9,4 +9,4 @@ const server = net.createServer((socket) => {
   socket.end();
 });
 
-server.listen(4221, "0.0.0.0");
+server.listen(4221, "localhost");
