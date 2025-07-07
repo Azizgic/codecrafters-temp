@@ -6,9 +6,7 @@ import * as net from "net";
 // Uncomment this to pass the first stage
 const server = net.createServer((socket) => {
   socket.write("HTTP/1.1 200 OK\r\n\r\n");
-  socket.on("close", () => {
-    socket.end();
-  });
+  socket.end();
 });
 
 server.listen(4221, "0.0.0.0");
